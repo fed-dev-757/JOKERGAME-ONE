@@ -1,0 +1,9 @@
+
+     ```bash
+     touch .nojekyll
+     git add .nojekyll
+     git commit -m "Ajout du fichier .nojekyll pour désactiver Jekyll"
+     git push origin main
+     ```
+
+     
