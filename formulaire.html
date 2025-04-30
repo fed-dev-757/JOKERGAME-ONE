@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Créer un compte</h2>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Nom d'utilisateur" required><br>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Mot de passe" required><br>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+    <style>
+    body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          border:none;
+          height:100px;
+          background-color: white; /* Mode clair au début */
+          color: black;
+         transition: background-color 0.5s, color 0.5s;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom:20px;
+    }
+ .setting {
+             margin-bottom:2px;
+            color:black;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #e60000;
+            width: 300px;
+          }
+ label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color:black;
+       }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background:;
+      color:black;
+      border: 1px solid #555;
+      border-radius: 5px;
+    }
+  button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e60000;
+            border: none;
+            border-radius:20px;
+            color: white;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: Arial, sans-serif;
+        }
+ button:hover {
+              background-color:gray;
+        }
+.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+</style>
+    </script>
+ <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");// Enregistrer l'état dans le stockage local du navigateur
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("mode", "dark");
+            } else {
+                localStorage.setItem("mode", "light");
+            }
+        }
+
+        // Quand la page charge, vérifier si l'utilisateur a activé le mode sombre avant
+        window.onload = function() {
+            if (localStorage.getItem("mode") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        }
+    </script>
+<div style="text-align: center; margin-top: 30px;">
+    <a href="index.html" style="text-decoration: none; background-color: red; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        Retour à l'accueil
+    </a>
+</body>
+</html>

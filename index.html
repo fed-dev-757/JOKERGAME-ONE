@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOKER GAME</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- lien sa se lien ki pemet nou met ikonn yo-->
+</head>
+<body>
+    <header>
+        <fieldset>
+            <nav>
+        <span>JOKER<b>GAME</b></span>
+<a href="index.html" onclick="showAlert('Accueil')">
+    <i class="fas fa-home"></i></a>
+       <!--pou ikonn akey lan--->
+<a href="formulaire.html" onclick="showAlert('Profil')">
+    <i class="fas fa-user"></i></a>
+    <!--pou ikonn itilisatè an-->
+<a href="Paramètres.html" onclick="showAlert('Paramètres')">
+    <i class="fas fa-cogs"></i></a>
+    <!-- pou ikonn paramet lan -->
+ </nav>
+ </fieldset>
+ <br>
+  <br>
+   <br>
+    <br>
+ <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Recherche...."/>
+<!--input type text sa se anplasman pou moun lan feh rechech li yo-->
+ <button onclick="searchGame()">
+  <i class="fas fa-search"></i>
+      <!--pou ikonn rechech lan-->
+      </button>
+      </div>
+<script>
+function searchGame() {
+    let input = document.getElementById('searchInput').value.toLowerCase(); // Récupère ce que l'utilisateur tape
+    let sections = document.querySelectorAll('.image-container section'); // Sélectionne tous les jeux
+
+    let found = false; // Pour savoir si un jeu est trouvé
+
+    sections.forEach(section => {
+        let gameName = section.querySelector('a').innerText.toLowerCase(); // Prend le nom du jeu
+
+        if (gameName.includes(input)) {
+            section.style.display = ""; // Montre le jeu trouvé
+            found = true;
+        } else {
+            section.style.display = "none"; // Cache les autres jeux
+        }
+    });
+
+    if (!found) {
+        alert('Jeu non trouvé !');
+    }
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+});
+</script>
+ <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");// Enregistrer l'état dans le stockage local du navigateur
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("mode", "dark");
+            } else {
+                localStorage.setItem("mode", "light");
+            }
+        }
+
+        // Quand la page charge, vérifier si l'utilisateur a activé le mode sombre avant
+        window.onload = function() {
+            if (localStorage.getItem("mode") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        }
+    </script>
+ </header>
+ <h1>Meilleures Classements des Jeux</h1>
+ <br>
+ <div class="image-container">
+        <section>
+ <img src="unnamed.jpg" alt="Moderne Combat 5" />
+ <a href="https://modern-combat-5.en.softonic.com/android/download"><p>modern combat5</p></a>
+            </section>
+
+ <section>
+<img src="images.jpeg" alt="Call of Duty"/>
+ <a href="https://call-of-duty-mobile.en.softonic.com/android/download"><p>call of duty</p></a>
+              </section>
+
+<section>
+<img src="com.firsttouchgames.dls7--4-icon.png" alt="DLS 24" />
+ <a href="https://play.google.com/store/apps/details?id=com.firsttouchgames.dls7"><p>DLS</p></a>
+        </section>
+
+ <section>
+<img src="call-of-duty-mobile---button-sm00-1552980373997.jpg" alt="Call of Duty Mobile"/>
+<a href="https://call-of-duty-mobile.en.softonic.com/android/download"><P>call of duty mobile</P></a>
+        </section>
+    </div>
+<br>
+<div class="image-container"> 
+
+<section>
+<img src="Asphalte.jpg"alt="Asphalte" />
+<a href="https://asphalt-9-legends.en.softonic.com/android"><P>asphalt-9</p></a>
+ </section>
+
+            <section>
+<img src="Free f.jpg"alt="Free Fire" />
+<a href="https://apkpure.com/garena-free-fire-android-2024/com.dts.freefireth"><p>free fire</p></a>
+            </section>
+
+            <section>
+<img src="Day after.jpg"alt="Day after" />
+<a href="https://days-after.en.uptodown.com/android"><p>day after</p></a>
+            </section>
+
+            <section>
+<img src="Sniper elite.jpg"alt="Sniper elite" />
+<a href="https://sniper-elite-4.en.softonic.com/"><p>sniper elite</p></a>
+            </section>
+    </div>
+<br>
+
+ <h1>Recommandations...</h1>
+<br>
+<div class="image-container">
+  <section>
+<img src="Real racin.png"alt="Real Racin" />
+<a href="https://real-racing-3.en.uptodown.com/android"><p>real-racing-3</p></a>
+    </section>
+
+<section>
+<img src="dead-rivals-feature-image.jpg"alt="dead rivals" />
+<a href="https://apkpure.com/dead-rivals-zombie-mmo/com.gameloft.android.ANMP.GloftWOHM"><p>dead-rivals</p></a>
+      </section>
+
+<section>
+<img src="ZombieGamesOnline11.jpg"alt="ZombieGames" />
+<a href="https://apkpure.com/state-of-survival-zombie-war/com.kingsgroup.sos"><p>Zombie</p></a>
+    </section>
+
+<section>
+<img src="Soccer2019.jpg"alt="Soccer2019" />
+<a href="https://dream-league.en.uptodown.com/android/download"><p>Soccer2019</p></a>     </section>
+   </div>
+ <br>
+<div class="image-container">
+
+<section>
+<img src="Brothers_in_Arms_3.png"alt="Brother in Arms" />
+<a href="https://androidapks.com/brothers-in-arms-3/com-gameloft-android-anmp-glofta3hm/"><p>brothers-in-arms-3</p></a>
+    </section>
+
+<section>
+<img src="FC 24.jpeg"alt="FC 24" />
+<a href=""><p>fc mobile</p></a>
+    </section>
+
+<section>
+<img src="CombatMissionSF2-800x445.jpg"alt="CombatMissionSF2-800x445" />
+<a href="https://combat-mission-shock-force.en.softonic.com/"><p>combat-mission</p></a>
+     </section>
+
+<section>
+<img src="nbalibemobile.jpg"alt="nbalibemobile" />
+<a href="NBA"><p>NBA</p></a>
+     </section>
+        </div>
+<br>
+ <h1>Événement en Cours...</h1>
+<br>
+ <div class="image-container">
+
+<section>
+<img src="DRift city.jpg"alt="Drift city" />
+<a href=""><p>drift city</p></a>
+            </section>
+
+            <section>
+<img src="Mini-DayZ-2-780x439.png"alt="Mini-DayZ-2-780x439" />
+<a href="#"><p>mini day</p></a>
+            </section>
+
+            <section>
+<img src="Zombie 1.png"alt="Zombie 1" />
+<a href="https://z-hunter.en.uptodown.com/android"><p>zombie hunter</p></a>
+            </section>
+
+            <section>
+<img src="mad-zombies-.jpg"alt="mad-zombies-" />
+           <a href="https://zombie-battleground.en.uptodown.com/android/download"onclinck="gameAlert('Mad Zombie')"><p>mad zombie</p></a>
+            </section>
+        </div>
+    <br>
+  <br>
+ <br>
+ 
+<footer>
+<a href="Politique de Confidentialité.html"><i class="fas fa-lock"></i> Confidentialité</a>
+<a href="#"><i class="fas fa-shopping-cart"></i>Application</a>
+<a href="Contactez-nous.html"><i class="fas fa-phone"></i> Contacter Nous</a>
+     </footer>
+</body>
+</html>
+<style>
+span  {
+        color:red;
+        font-size:25px;
+        font-style:italic;
+        margin-right:8℅;
+        margin-left:4%;
+       }
+
+    b {
+        color: #f1f1f1;
+        font-family: arial;
+        font-size:20px;
+        font-style: arial;
+       }
+
+ nav a {
+        text-decoration: none;
+        font-size: 25px;
+        color: #f1f1f1;
+        margin:25px;
+        padding-bottom: -1px;
+       }
+
+nav a:hover {
+               background-color:skyblue;
+            }
+
+.search-bar {
+             display: flex;
+             color: blue;
+             align-items: center;
+             background-color: #f1f1f1;
+             padding: 5px 10px;
+             border-radius: 20px;
+             width: 300px;
+             margin: 20px auto;
+             position:;
+            }
+
+.search-bar input {
+                    border: none;
+                    outline: none;
+                    padding: 5px;
+                    flex: 1px;
+                    font-size: 16px;
+                    text-align: center;
+                    position:;
+                   }
+
+fieldset {
+           width: 90%;
+           position: fixed;
+           margin-left: 0px;
+           margin-bottom: 0px;
+           margin-top: -0px;
+           border: none;
+           background-color: black;
+          }
+
+body {
+        background-color: black;
+         font-family: Arial, sans-serif;
+     }
+
+    h1 {
+        font-family: Georgia;
+        font-size: 20px;
+        color: #f1f1f1;
+       }
+
+
+    a {
+        font-family: Georgia;
+        font-size: 15px;
+        color: #f1f1f1;
+        text-decoration: none;
+        text-align: center;
+       }
+
+a:hover {
+          color: #4CAF50;
+        }
+
+footer {
+         display: flex;
+         text-align: center;
+         padding: 10px;
+         margin: 5px;
+         justify-content:space-between;
+         border:solid;
+        
+        }
+
+.footer a {
+            color: #4CAF50;
+            font-family: italic;
+            font-size: 15px;
+          }
+
+ footer a:hover: {
+                   color: skyblue;
+                   text-decoration: none;
+                 }
+ nav {
+    position: fixed; /* Le nav reste bloqué en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; /* Couleur de fond du nav */
+    z-index: 1000; /* Le nav passe au-dessus de tout */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:px;
+     border-bottom: 5px solid  #e60000;;
+     }
+.image-container {
+                   display:flex;
+                   gap:px;
+                   padding-bottom:10px;
+                   transition: transform 0.3s;
+                  }
+    }
+
+image-container img {
+        width:10%;
+        gap:px;
+        margin:20px;
+    }
+
+p {
+            color:#f1f1f1;
+            font-size:17px;
+            padding:px;
+            margin:px;
+            font-family:italic, sans-serif;
+             text-decoration: none;
+            }
+  img{
+        width:90px;
+        height:90px;
+        margin:5px;
+        padding:px;
+         border-radius:50px;
+     }
+section a:hover {
+        ccolor: green;
+        {
+ .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+/* Le nav (barre de navigation) */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+}
+
+/* Icônes du nav */
+nav a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+}
+
+/* Les images des jeux */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-container section {
+  text-align: center;
+}
+
+/* Images */
+.image-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Titres sous les images */
+.image-container p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+/* --- MEDIA QUERIES --- */
+/* Pour les petits téléphones (écrans < 600px) */
+@media screen and (max-width: 600px) {
+ 
+.search-bar {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-bar input {
+        width: 70%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .search-bar button {
+        padding: 10px;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+</style>
+
