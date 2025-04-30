@@ -7,7 +7,7 @@
   <style>
  body {
         font-family: Arial, sans-serif;
-        padding: 20px;
+        padding:20px;
         border:none;
         height:100px;
         background-color: white; /* Mode clair au début */
@@ -26,7 +26,7 @@
             border-radius: 10px;
             box-shadow: 0 0 px #e60000;
             width:px;
-            height:50px;
+            height:70px;
           }
  label {
         display: block;
@@ -63,25 +63,19 @@
             background-color: #121212;
             color: white;
         }
-
-
   </style>
 </head>
 <body>
-
 <h1>Paramètres</h1>
-
 <div class="setting">
   <label for="username">Changer de pseudo :</label>
   <input type="text" id="username" placeholder="Entrez votre nouveau pseudo"><button type="submit">Confirmer</button>
 </div>
-
 <div class="setting">
   <label for="password">Changer de mot de passe :</label>
   <input type="password" id="password" placeholder="Entrez un nouveau mot de passe">
   <button type="submit">Confirmer</button>
 </div>
-
 <div class="setting">
 <label for="language">Langue:</label>
   <select id="language">
@@ -90,22 +84,18 @@
     <option value="es">Espagnol</option>
   </select>
     <button type="submit">Confirmer</button>
-  
 </div>
-
 <div class="setting">
   <label>Mode Sombre :</label>
 <button onclick="toggleDarkMode()">Activer/Désactiver </button>
  <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");// Enregistrer l'état dans le stockage local du navigateur
+        function toggleDarkMode() {         document.body.classList.toggle("dark-mode");// Enregistrer l'état dans le stockage local du navigateur
             if (document.body.classList.contains("dark-mode")) {
                 localStorage.setItem("mode", "dark");
             } else {
                 localStorage.setItem("mode", "light");
             }
         }
-
         // Quand la page charge, vérifier si l'utilisateur a activé le mode sombre avant
         window.onload = function() {
             if (localStorage.getItem("mode") === "dark") {
@@ -113,7 +103,6 @@
             }
         }
     </script>
-   
 <script>
 const translations = {
   en: {
@@ -139,24 +128,17 @@ const translations = {
     </a>
 <script>
 document.getElementById('language-selector').addEventListener('change', function() {
-  const selectedLang = this.value;
-  document.getElementById('welcome').textContent = translations[selectedLang].welcome;
-  document.getElementById('settings').textContent = translations[selectedLang].settings;
-  document.getElementById('contact').textContent = translations[selectedLang].contact;
+  const selectedLang = this.value;  document.getElementById('welcome').textContent = translations[selectedLang].welcome;  document.getElementById('settings').textContent = translations[selectedLang].settings;  document.getElementById('contact').textContent = translations[selectedLang].contact;
 });
 </script>
-
 <script>
 // Sauvegarder la langue sélectionnée
 localStorage.setItem('preferredLanguage', selectedLang);
-
 // Au chargement de la page, appliquer la langue préférée
 window.addEventListener('load', () => {
   const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
-  document.getElementById('language-selector').value = preferredLang;
-  document.getElementById('welcome').textContent = translations[preferredLang].welcome;
-  document.getElementById('settings').textContent = translations[preferredLang].settings;
-  document.getElementById('contact').textContent = translations[preferredLang].contact;
+  document.getElementById('language-selector').value = preferredLang; document.getElementById('welcome').textContent = translations[preferredLang].welcome;
+document.getElementById('settings').textContent = translations[preferredLang].settings; document.getElementById('contact').textContent = translations[preferredLang].contact;
 });
 </script>
 </body>
