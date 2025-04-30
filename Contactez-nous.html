@@ -2,25 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Contactez-nous - JOKERGAME</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Contactez-nous - JOKERGAME</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
+      background-color:0000;
+      color:: #f1f1f1;
       font-family: Arial, sans-serif;
-      padding: 20px;
-      margin: 0;
+      padding:20px;
+      margin:0;
     }
     h1 {
       text-align: center;
       margin-bottom: 20px;
-    }
-    form {
-      max-width: 400px;
-      margin: auto;
-      background-color: #111;
-      padding: 20px;
-      border-radius: 10px;
     }
     label {
       display: block;
@@ -64,6 +58,24 @@
             background-color:gray;
             transition: background-color 0.5s, color 0.5s;
         }
+  @media screen and (max-width: 600px) {
+ search-bar {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-bar input {
+        width: 70%;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .search-bar button {
+        padding: 10px;
+        font-size: 16px;
+        margin-left: 5px;
+      }
   </style>
 </head>
 <body>
@@ -81,7 +93,6 @@
     <button type="submit">Envoyer</button>
   </form>
   </div>
-  
 <div style="text-align: center; margin-top: 30px;">
     <a href="index.html" style="text-decoration: none; background-color: red; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
         Retour à l'accueil
@@ -94,7 +105,6 @@
   })();
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-
     emailjs.sendForm('service_m1s5n55', 'VOTRE_TEMPLATE_ID', this)
       .then(function() {
         alert('Message envoyé avec succès !');
