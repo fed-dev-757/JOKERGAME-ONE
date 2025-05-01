@@ -101,11 +101,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   (function() {
-    emailjs.init("VOTRE_PUBLIC_KEY"); // Remplacez par votre clé publique EmailJS
+    emailjs.init("hLSmQnWcTRMbsEvBJ"); // Remplacez par votre clé publique EmailJS
   })();
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    emailjs.sendForm('service_m1s5n55', 'VOTRE_TEMPLATE_ID', this)
+    emailjs.sendForm('service_70t0tzu', 'template_1zwwjma ', this)
       .then(function() {
         alert('Message envoyé avec succès !');
       }, function(error) {
@@ -114,5 +114,4 @@
       });
   });
 </script>
-</html>
 </body>
